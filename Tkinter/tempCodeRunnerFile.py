@@ -1,1 +1,1 @@
-sticky="w"
+,20,"bold"

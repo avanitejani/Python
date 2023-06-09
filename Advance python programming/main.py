@@ -46,7 +46,7 @@ elif role == 2:
 
 	elif role2 == 2:
 		print("you selected Login ")
-		from login import *
+		from singup import *
 
 	elif role2 == 3:
 		print("you selected purchase stock ")

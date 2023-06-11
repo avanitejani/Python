@@ -39,21 +39,10 @@ def total():
 
 
 
-# def fun1():
-    # l1.insert("end", data.get())
-    # l1.insert("end", demo.get())
-    # l1.insert("end", sliding.get())
-
-
-
-
-    # sl1 = Scale(f1, from_=100, to=500, variable=sliding, orient=HORIZONTAL)
-
-
 
 def showdata():
-    # file=open("data.txt","a")
-    print(f"\n\n name Of Product: {name.get()}\n Quantity Of Product:{quan.get()}\n Price of Product:{totalq.get()}\n  Total Price    :{total_all.get()}")
+    global name,quan,totalq,totalp,total_all
+    print(f"\n\n name Of Product: {name.get()}\n Quantity Of Product:{quan.get()}\n Price of Product:{totalq.get()}\n Total Price :{total_all.get()}")
 
 
 # Create the "Add Stock" section
@@ -85,6 +74,10 @@ add_stock_button.place(x=150,y=300,width=130,height=40)
 # Create the "delete Stock" button
 delet_stock_button=Button(text="Delete Stock",font='Verdana 10 bold',bg="orange",fg="black",bd=5,relief="raised",command=total)
 delet_stock_button.place(x=150,y=350,width=130,height=40)
+
+
+delet_stock_button=Button(text="view Stock",font='Verdana 10 bold',bg="orange",fg="black",bd=5,relief="raised",command=showdata)
+delet_stock_button.place(x=150,y=400,width=130,height=40)
 
 
 # f1 = Frame(root)

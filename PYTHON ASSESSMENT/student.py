@@ -1,6 +1,6 @@
-from Counselor import *
+from Counselor import *  #------------------------------------------------ import conselor
 
-def student_details():
+def student_details():  #------------------------------------------------- creatc fuction for View All Student
     student=int(input("Enter Serial Number : "))
     if student in all_record.keys():
         print("First Name--------------")
@@ -18,12 +18,12 @@ def student_details():
     else:
         print("Not A Student Serial Number")
 
-stu={}
-def student_parents():
+stu={} #----------------------------------------------------------------- create empty Dictionary
+def student_parents(): #------------------------------------------------- create fuction for Add student parents information
     first_name = input("Enter First Name: ")
     last_name = input("Enter Last Name : ")
     Contect_number = int(input("Enter Contect Number : "))
     salary = int(input("Enter salary : "))
-    global stu
+    global stu  #-------------------------------------------------------- store student details
     stu.update( {'fname': first_name, 'lname': last_name,'Contact': Contect_number, "salary": salary,})
 

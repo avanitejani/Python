@@ -29,11 +29,10 @@ def total():
 
 
 
+
 def showdata():
-    # file=open("data.txt","a")
-    print(f"\n\n name Of Product: {name.get()}\n Quantity Of Product:{quan.get()}\n Price of Product:{totalq.get()}\n  Total Price    :{total_all.get()}")
-
-
+    global name,quan,totalq,totalp,total_all
+    print(f"\n\n name Of Product: {name.get()}\n Quantity Of Product:{quan.get()}\n Price of Product:{totalq.get()}\n Total Cost :{total_all.get()}")
 # Create the "Add Stock" section
 
 name_label=Label(root,text="product Name",font='Verdana 10 bold',pady=10,padx=20)
@@ -62,20 +61,10 @@ add_stock_button=Button(text="purchase",font='Verdana 10 bold',bg="orange",fg="b
 add_stock_button.place(x=150,y=300,width=130,height=40)
 
 
+delet_stock_button=Button(text="view Stock",font='Verdana 10 bold',bg="orange",fg="black",bd=5,relief="raised",command=showdata)
+delet_stock_button.place(x=150,y=400,width=130,height=40)
 
 
-# f1 = Frame(root)
-# f1.pack()
-# b1 = Button(f1, text="Cliuck ME")
-# b1.pack()
-
-# s1 = Scrollbar(f1)
-# l1 = Listbox(f1, width=20, yscrollcommand=s1.set)
-# s1.pack(side="right", fill="y")
-
-# l1.pack()
-# s1.config(command=l1.yview)
-# s1.place(x=150,y=400,width=130,height=40)
 
 
 

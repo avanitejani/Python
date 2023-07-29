@@ -47,7 +47,7 @@ elif role == 2:
 		role2=int(input("Enter A Choice A Number : "))
 		if role2 == 1: # -------------------------  if user select 1 to perform Register
 			print("you selected Register ")
-			from registrestion_from import * # ----  import registrestion_from file
+			from registrestion_from import * # ---  import registrestion_from file
 
 		elif role2 == 2: # -----------------------  if user select 2 to perform Login
 			print("you selected Login ")

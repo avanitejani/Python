@@ -3,18 +3,30 @@
 
 
 from tkinter import *
-# import mysql.connector
-# from tkinter import messagebox
+import mysql.connector
+from tkinter import messagebox
 import pymysql
+
 root=Tk()
 root.geometry('430x550')
-root.resizable(0,0) 
+root.resizable(0,0)
+root.title('Login Page')
+
 # def login_user():
 #     if usernameEntry.get()=="" or passwordEntry.get()=="":
 #         messagebox.showerror('Error',"All fieldes Are Required")
 
 usename=StringVar()
 pswd=StringVar()
+
+def clear():
+    # emailEntry.delete(0,END)
+    usernameEntry.delete(0,END)
+    passwordEntry.delete(0,END)
+    # CpswdEntry.delete(0,END)
+    # check.set(0)
+    root.destroy()
+    import singup
 
 
 def connect_database():
@@ -50,10 +62,7 @@ def pwds(event):
     if passwordEntry.get()== "Password":
         passwordEntry.delete(0,END)
 
-root=Tk()
-root.geometry('430x550') 
-root.resizable(0,0) 
-root.title('Login Page')
+
 
 #heading label
 heading = Label(root , text = "Login",fg='black' , font = 'Verdana 25 bold')
@@ -62,7 +71,7 @@ heading.place(x=160 , y=80)
 #username label and text entry box  
 # usernameLabel=Label(root,text="User Name*", font='Verdana 10 bold',pady=10,padx=20)
 # usernameLabel.place(x=80,y=170)
-usernameEntry=Entry(root,width=25,bd=0,fg='black' ,font='Verdana 10 bold')
+usernameEntry=Entry(root,width=25,bd=0,fg='black' ,font='Verdana 10 bold',textvariable=usename)
 usernameEntry.place(x=80,y=170,width=280,height=30)
 usernameEntry.insert(0,"User Name")
 usernameEntry.bind('<FocusIn>',usrnm)
@@ -70,7 +79,7 @@ f1=Frame(root,width=280,height=2,bg="black")
 f1.place(x=80,y=205)
 
 
-passwordEntry=Entry(root,width=25,bd=0,fg='black' ,font='Verdana 10 bold')
+passwordEntry=Entry(root,width=25,bd=0,fg='black' ,font='Verdana 10 bold',textvariable=pswd)
 passwordEntry.place(x=80,y=220,width=280,height=30)
 passwordEntry.insert(0,"password")
 passwordEntry.bind('<FocusIn>',pwds)

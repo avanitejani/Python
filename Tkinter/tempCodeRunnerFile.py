@@ -1,1 +1,1 @@
-,20,"bold"
+pip install mysql-connector

@@ -40,6 +40,7 @@ def connect_database():
     # args=
     cursor.execute(query,(emailvar.get(),uservar.get(),pwdvar.get()))
     mydb.commit()
+    
 def login_page():
     root.destroy()
     import login

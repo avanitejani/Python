@@ -25,7 +25,7 @@ d1.pack()
 
 f1 = Frame(root)
 f1.pack()
-b1 = Button(f1, text="Cliuck ME", command=fun1)
+b1 = Button(f1, text="Cliuck ME", comma1nd=fun1)
 b1.pack()
 
 s1 = Scrollbar(f1)

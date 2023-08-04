@@ -1,0 +1,145 @@
+{% extends 'doc_header_footer.html' %} {% block content %}{% load static %}
+
+
+<!--Page Title-->
+<section class="page-title text-center" style="background-image:url({% static 'images/background/3.jpg' %});">
+    <div class="container">
+        <div class="title-text">
+            <h1>Profile</h1>
+            <ul class="title-menu clearfix">
+                <li>
+                    <a href="{% url 'doc_index'  %}">home &nbsp;/</a>
+                </li>
+                <li>View Profile</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--End Page Title-->
+
+<section class="section contact">
+  <!-- container start -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-5 ">
+        <!-- address start -->
+        <div class="address-block">
+          <!-- Location -->
+          <div class="media">
+            <i class="far fa-map"></i>
+            <div class="media-body">
+              <h3>Location</h3>
+              <p>PO Box 16122 Collins Street West <br>Victoria 8007 Canada</p>
+            </div>
+          </div>
+          <!-- Phone -->
+          <div class="media">
+            <i class="fas fa-phone"></i>
+            <div class="media-body">
+              <h3>Phone</h3>
+              <p>
+                (+48) 564-334-21-22-34
+                <br>(+48) 564-334-21-22-38
+              </p>
+            </div>
+          </div>
+          <!-- Email -->
+          <div class="media">
+            <i class="far fa-envelope"></i>
+            <div class="media-body">
+              <h3>Email</h3>
+              <p>
+                info@templatepath.com
+                <br>info@cleanxer.com
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- address end -->
+      </div>
+      <div class="col-lg-8 col-md-7">
+        <div class="contact-form">
+          <!-- contact form start -->
+          {% comment %} <form action="https://demo.themefisher.com/medic/!#" class="row"> {% endcomment %}
+          <form action="{% url 'doc_profile' %}" method="post" class="row"  enctype="multipart/form-data">
+            {% csrf_token %}
+            <div style="color: maroon;">{{msg}}</div>
+ 
+            <!-- pic -->
+            <div class="col-lg-12">
+                <div class="form-floating theme-form-floating">
+                    <img width="170px" height="115px" src="{{data.propic.url}}"/>
+                </div>
+            </div>
+
+            
+
+            <div class="col-lg-12">
+                <div class="form-floating theme-form-floating">
+                    <input type="file" name="propic" value={{data.name}} placeholder="Select Image" >
+                </div>
+            </div>
+
+           
+
+            <!-- email -->
+            <div class="col-lg-12">
+              <label for="fullname">Doctor Email</label>
+              <input type="email" class="form-control main" id="email" name="email" placeholder="Email Address" disabled value="{{data.email}}" required>
+            </div>
+
+             <!-- name -->
+             <div class="col-lg-6">
+                <label for="fullname">Dr. Name</label>
+                <input type="text" class="form-control main" id="email" name="name" placeholder="Full Name"  value="{{data.name}}" required>
+              </div>
+
+            <!-- old pswd -->
+            <div class="col-lg-6">
+                <label for="fullname">Old Password</label>
+                <input type="password" class="form-control main" id="password" name="oldpswd" placeholder="Old Password">
+            </div>
+
+            <!-- con pswd -->
+            <div class="col-lg-6">
+                <label for="fullname">New Password</label>
+                <input type="password" class="form-control main" id="cpassword"  name="newpswd" placeholder="New Password">
+            </div>
+
+            <!-- con new pswd -->
+            <div class="col-lg-6">
+                <label for="fullname">Confirm New Password</label>
+                <input type="password" class="form-control main" id="cpassword"  name="cnewpswd" placeholder="Confirm New Password">
+            </div>
+
+            
+            <!-- submit button -->
+            <div class="col-md-12 text-right">
+              <button type="submit" class="btn btn-style-one" >Update Profile</button>
+            </div>
+
+            <!-- Logout  button -->
+            <li class="nav-item @@contact">
+                <a class="btn btn-style-one"href="{% url 'doc_logout'  %}">Logout</a>
+            </li>
+
+                 
+    
+
+          </form>
+          <!-- contact form end -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- container end -->
+</section>
+<!--====  End of Contact Form  ====-->
+
+{% comment %} <section class="map">
+  <!-- Google Map -->
+  <div id="map"></div>
+</section> {% endcomment %}
+<!--====  End of Google Map  ====-->
+
+{% endblock %}

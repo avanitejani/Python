@@ -1,0 +1,176 @@
+{% extends 'doc_header_footer.html' %} {% block content %}{% load static %}
+
+
+<!--Page Title-->
+<section class="page-title text-center" style="background-image:url({% static 'images/background/3.jpg' %});">
+    <div class="container">
+        <div class="title-text">
+            <h1>Profile</h1>
+            <ul class="title-menu clearfix">
+                <li>
+                    <a href="{% url 'doc_index'  %}">home &nbsp;/</a>
+                </li>
+                <li>View Profile</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--End Page Title-->
+
+<section class="section contact">
+  <!-- container start -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-5 ">
+        <!-- address start -->
+        <div class="address-block">
+          <!-- Location -->
+          <div class="media">
+            <i class="far fa-map"></i>
+            <div class="media-body">
+              <h3>Location</h3>
+              <p>PO Box 16122 Collins Street West <br>Victoria 8007 Canada</p>
+            </div>
+          </div>
+          <!-- Phone -->
+          <div class="media">
+            <i class="fas fa-phone"></i>
+            <div class="media-body">
+              <h3>Phone</h3>
+              <p>
+                (+48) 564-334-21-22-34
+                <br>(+48) 564-334-21-22-38
+              </p>
+            </div>
+          </div>
+          <!-- Email -->
+          <div class="media">
+            <i class="far fa-envelope"></i>
+            <div class="media-body">
+              <h3>Email</h3>
+              <p>
+                info@templatepath.com
+                <br>info@cleanxer.com
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- address end -->
+      </div>
+      <div class="col-lg-8 col-md-7">
+        <div class="contact-form">
+          <!-- contact form start -->
+          {% comment %} <form action="https://demo.themefisher.com/medic/!#" class="row"> {% endcomment %}
+          <form action="{% url 'add_doctor' %}" method="post" class="row"  enctype="multipart/form-data">
+            {% csrf_token %}
+            <div style="color: maroon;">{{msg}}</div>
+
+            {% comment %} <div class="col-lg-12">
+                <div class="form-floating theme-form-floating">
+                    <img width="170px" height="115px" src="{{data.propic.url}}"/>
+                </div>
+            </div> {% endcomment %}
+
+            
+
+            <div class="col-lg-12">
+                <div class="form-floating theme-form-floating">
+                    <input type="file" name="d_image" placeholder="Select Image" >
+                </div>
+            </div>
+
+           
+         {% comment %} <!-- email -->
+            <div class="col-lg-12">
+              <label for="fullname">Doctor Email</label>
+              <input type="email" class="form-control main" id="demail" name="demail" placeholder="Email Address" required>
+            </div>   {% endcomment %}
+
+
+            <div class="col-lg-6">
+              <option>Departments</option>
+
+              <div class="form-group">
+                <select  name="department_typ" >
+                  <option>Diagnostic</option>
+                  <option>Psychological</option>
+                  <option>Cardiology</option>
+                  <option>Pharmacy</option>
+                  <option>Casuaty department</option>
+                  <option>Haematology</option>
+                  <option>Genral Surgery</option>
+                  <option>Pathology</option>
+                  <option>Otorhinolaryngology</option>
+                  <option>Intensie care medicinev</option>
+
+                </select>
+              </div>
+           </div>
+
+
+            <div class="col-lg-6">
+              <option>Doctor</option>
+
+              <div class="form-group">
+                <select  name="doctor_typ"  >
+                  <option>Eye Specialist</option>
+                  <option>Skin Specialist</option>
+                  <option>Diagnostic</option>
+                  <option>Psychological</option>
+                  <option>Surgeon</option>
+                  <option>Neurologist</option>
+                  <option>Psychiatrist</option>
+                  <option>Rediologi</option>
+                  <option>Cardiologist</option>
+                  <option>Oncologist</option>
+                  <option>Urologist</option>
+                  <option>Anesthesiologist</option>
+                  <option>Gynecologist</option>
+                  <option>Podiatrist</option>
+                  <option>Ophtalmologist</option>
+
+                </select>
+              </div>
+           </div>  
+
+
+
+             <!-- name -->
+             <div class="col-lg-6">
+                <label for="fullname">Dr. Name</label>
+                <input type="text" class="form-control main" id="fullname" name="dname" placeholder="Full Name"   required>
+              </div>
+
+          
+            <div class="col-lg-12">
+              <label for="fullname">Dr. descreption</label>
+              <textarea name="doc_desc" rows="4" cols="100"  class="form-control main" placeholder="doctor Description and othe profetion"></textarea>
+            </div> 
+            
+            <!-- submit button -->
+            <div class="col-md-12 text-right">
+              <button type="submit" class="btn btn-style-one" >Add Details</button>
+            </div>
+
+            
+
+                 
+    
+
+          </form>
+          <!-- contact form end -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- container end -->
+</section>
+<!--====  End of Contact Form  ====-->
+
+{% comment %} <section class="map">
+  <!-- Google Map -->
+  <div id="map"></div>
+</section> {% endcomment %}
+<!--====  End of Google Map  ====-->
+
+{% endblock %}

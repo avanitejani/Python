@@ -1,0 +1,76 @@
+
+open new terminal in command prompt (cmd)
+python --version     -------------how to chke python version
+
+
+1---Create a Environment
+python -m venv environementname
+python -m venv myenv
+
+2----Activate your environementname
+environementname\Scripts\activate 
+myenv\Scripts\activate
+
+
+3----installing Djnago
+pip install django 
+
+4--- craeting project
+django-admin startproject projectname .
+django-admin startproject ecommerce .
+
+5----creating application
+django-admin startapp appname
+django-admin startapp app_crud
+
+6--creating datatbase
+
+python manage.py makemigrations
+python manage.py migrate
+
+7---running your project
+python manage.py runserver
+
+8--linking app with project
+goto settings.py file inside project folder
+
+
+
+create admin penal
+
+(myenv) C:\SweetShop Project>python manage.py createsuperuser
+Username (leave blank to use 'avani'): admin
+Email address: 
+Password: 
+Password (again):
+This password is too short. It must contain at least 8 characters.
+This password is too common.
+This password is entirely numeric.
+Bypass password validation and create user anyway? [y/N]: y
+Superuser created successfully.
+
+python manage.py runserver
+
+
+pyment in cmd terminal
+pip install razorpay
+
+
+
+------- install Git Bash from googal ---------
+
+open git Bash terminal  (one Time)
+$ git config --global user.name "avanitejani" (Use GitHub user name)  prees Enter....
+$ git config --global user.email "avanitejani@gmail.com" (Use GitHub Gmail id)  prees Enter....
+
+open Command Prompt (cmd) terminal
+$ pip freeze > req.txt prees Enter....
+$ touch .gitignore
+
+
+
+
+
+goto installed_apps section and add our appname
+
+jinja--python code in html

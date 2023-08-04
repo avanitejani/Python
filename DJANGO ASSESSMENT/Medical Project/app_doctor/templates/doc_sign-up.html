@@ -1,0 +1,177 @@
+{% extends 'doc_header_footer.html' %} {% block content %}{% load static %}
+
+
+<!--Page Title-->
+<section class="page-title text-center" style="background-image:url({% static 'images/background/3.jpg' %});">
+    <div class="container">
+        <div class="title-text">
+            <h1>Registration</h1>
+            <ul class="title-menu clearfix">
+                <li>
+                    <a href="{% url 'doc_index'  %}">home &nbsp;/</a>
+                </li>
+                <li>Sign-Up</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--End Page Title-->
+
+<section class="section contact">
+  <!-- container start -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-5 ">
+        <!-- address start -->
+        <div class="address-block">
+          <!-- Location -->
+          <div class="media">
+            <i class="far fa-map"></i>
+            <div class="media-body">
+              <h3>Location</h3>
+              <p>PO Box 16122 Collins Street West <br>Victoria 8007 Canada</p>
+            </div>
+          </div>
+          <!-- Phone -->
+          <div class="media">
+            <i class="fas fa-phone"></i>
+            <div class="media-body">
+              <h3>Phone</h3>
+              <p>
+                (+48) 564-334-21-22-34
+                <br>(+48) 564-334-21-22-38
+              </p>
+            </div>
+          </div>
+          <!-- Email -->
+          <div class="media">
+            <i class="far fa-envelope"></i>
+            <div class="media-body">
+              <h3>Email</h3>
+              <p>
+                info@templatepath.com
+                <br>info@cleanxer.com
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- address end -->
+      </div>
+      <div class="col-lg-8 col-md-7">
+        <div class="contact-form">
+          <!-- contact form start -->
+          {% comment %} <form action="https://demo.themefisher.com/medic/!#" class="row"> {% endcomment %}
+          <form action="{% url 'doc_register' %}" method="post" class="row">
+            {% csrf_token %}
+            <div style="color: maroon;">{{msg}}</div>
+
+            <!-- name -->
+            <div class="col-lg-12">
+              <label for="fullname">Dr. Name</label>
+              <input type="text" class="form-control main" id="email" name="name" placeholder="Full Name" required>
+            </div>
+
+            <!-- email -->
+            <div class="col-lg-12">
+              <label for="fullname">User Email</label>
+              <input type="email" class="form-control main" id="email" name="email" placeholder="Email Address" required>
+            </div>
+
+             {% comment %} <div class="col-lg-6">
+                  <option>Departments</option> {% endcomment %}
+{% comment %} 
+              <div class="form-group">
+                <select  name="subject">
+                  <option>Departments</option>
+                  <option>Diagnostic</option>
+                  <option>Psychological</option>
+                  <option>Cardiology</option>
+                  <option>Pharmacy</option>
+                  <option>Casuaty department</option>
+                  <option>Haematology</option>
+                  <option>Genral Surgery</option>
+                  <option>Pathology</option>
+                  <option>Otorhinolaryngology</option>
+                  <option>Intensie care medicinev</option>
+
+
+
+
+                </select>
+              </div>
+           </div> {% endcomment %}
+
+
+            {% comment %} <div class="col-lg-6">
+              <option>Doctor</option>
+
+              <div class="form-group">
+                <select class="form-control" name="subject">
+                  <option>Doctor</option>
+                  <option>Eye Specialist</option>
+                  <option>Skin Specialist</option>
+                  <option>Diagnostic</option>
+                  <option>Psychological</option>
+                  <option>Surgeon</option>
+                  <option>Neurologist</option>
+                  <option>Psychiatrist</option>
+                  <option>Rediologi</option>
+                  <option>Cardiologist</option>
+                  <option>Oncologist</option>
+                  <option>Urologist</option>
+                  <option>Anesthesiologist</option>
+                  <option>Gynecologist</option>
+                  <option>Podiatrist</option>
+                  <option>Ophtalmologist</option>
+
+
+
+                </select>
+              </div>
+           </div> {% endcomment %}
+
+
+            <!-- pswd -->
+            <div class="col-lg-6">
+                <label for="fullname">Password</label>
+                <input type="password" class="form-control main" id="password" name="password" placeholder="Password">
+            </div>
+
+            <!-- con pswd -->
+            <div class="col-lg-6">
+                <label for="fullname">Confirm Password</label>
+                <input type="password" class="form-control main" id="cpassword"  name="cpassword" placeholder="Confirm Password">
+            </div>
+            
+            <!-- submit button -->
+            <div class="col-md-12 text-right">
+              <button type="submit" class="btn btn-style-one" >Sign Up</button>
+            </div>
+
+            {% comment %} <li class="col-lg-6">
+              <a class="" href="{% url 'doc_login'  %}" >Already have an account ? Log in Now</a>
+            </li>         {% endcomment %}
+
+            <li class="col-lg-12">
+              <p>Already have an account ? Log in Now</p>
+              <a class="btn btn-style-one"href="{% url 'doc_login'  %}">Login</a>
+            </li>
+    
+
+          </form>
+          <!-- contact form end -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- container end -->
+</section>
+<!--====  End of Contact Form  ====-->
+
+{% comment %} <section class="map">
+  <!-- Google Map -->
+  <div id="map"></div>
+</section> {% endcomment %}
+<!--====  End of Google Map  ====-->
+
+{% endblock %}

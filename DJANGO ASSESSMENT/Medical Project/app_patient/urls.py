@@ -31,6 +31,9 @@ urlpatterns = [
    path('services/',views.services,name='services'),
    path('gallery/',views.gallery,name='gallery'),
    path('team/',views.team,name='team'),
+   path('doc_info/<int:pk>',views.doc_info,name='doc_info'),
+
+
    path('blog/',views.blog,name='blog'),
    path('blogd/',views.blogd,name='blogd'),
 #    path('show_doctor/',views.show_doctor,name='show_doctor'),

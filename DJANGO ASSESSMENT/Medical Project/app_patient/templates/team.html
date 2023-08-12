@@ -53,9 +53,12 @@
               <div class="col-lg-4 col-md-6">
                 <div class="team-person text-center">
                   <img loading="lazy" src="{{i.doc_image.url}}" class="img-fluid" alt="team">
-                  <h6> <a href="">{{i.doc_name}}</a></h6>
+
+                  <h6> <a href="{%url 'doc_info' i.id %}" class="name">{{i.doc_name}} </a> </h6>
+
+                  {% comment %} <h6> <a href="">{{i.doc_name}}</a></h6> {% endcomment %}
                   <p>{{i.departments}}</p>
-                  <p>{{i.doctor}}</p>
+                  {% comment %} <p>{{i.doctor}}</p> {% endcomment %}
 
                 </div>
               </div>

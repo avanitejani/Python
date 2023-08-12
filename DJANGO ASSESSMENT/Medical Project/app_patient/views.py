@@ -113,6 +113,8 @@ def profile(request):
 
 def appointment(request):
     app=User.objects.get(email=request.session["email"])
+    all_doc=Profile.objects.all()
+
     if request.method == 'POST':
         data=Appointment.objects.create(
         name = request.POST['Name'],
@@ -129,7 +131,7 @@ def appointment(request):
 
     else:
         # doctors = Doctor.objects.all()
-        return render(request, 'appointment.html', {'app': app})
+        return render(request, 'appointment.html', {'app': app ,"all_doc":all_doc})
 
 
 def about(request):
@@ -149,6 +151,11 @@ from app_doctor.models import *
 def team(request):
     all_doc=Profile.objects.all()
     return render(request,"team.html",{"all_doc":all_doc})
+
+
+def doc_info(request,pk):
+     one_doc=Profile.objects.get(id=pk)
+     return render(request,"doc_info.html",{"one_product":one_doc})
 
 def blog(request):
     return render(request,"blog.html")

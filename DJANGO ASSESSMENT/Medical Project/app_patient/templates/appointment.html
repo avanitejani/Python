@@ -68,8 +68,14 @@
                 <div class="form-group">
                   <select class="form-control" name="Doctor">
                     <option>Doctor</option>
-                    <option>Eye Specialist</option>
-                    <option>Skin Specialist</option>
+
+                    {% for i in all_doc%}
+
+                    <option>{{i.doc_name}}</option>
+
+                    {% endfor %}
+
+                    {% comment %} <option>Skin Specialist</option>
                     <option>Diagnostic</option>
                     <option>Psychological</option>
                     <option>Surgeon</option>
@@ -82,7 +88,7 @@
                     <option>Anesthesiologist</option>
                     <option>Gynecologist</option>
                     <option>Podiatrist</option>
-                    <option>Ophtalmologist</option>
+                    <option>Ophtalmologist</option> {% endcomment %}
 
 
 

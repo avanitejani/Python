@@ -12,6 +12,9 @@ import datetime
 from django.shortcuts import render
 from .models import *
 
+
+# pip install djangorestframework
+
 # Create your views here.
 def index(request):
     if request.method == "POST":
@@ -41,14 +44,14 @@ def one_data(request,pk):
 def update(request,pk,B,C):
     try:
         one_data=Blog.objects.get(id=pk)
-        one_data.Blog=B
-        one_data.Contant=C
+        one_data.titel=B
+        one_data.content=C
         one_data.save()
 
     except:
         Blog.objects.create(
-            Blog=B,
-            Contant=C
+            titel=B,
+            content=C
         )
     data=Blog.objects.all()
     serial=BlogSerializer(data,many=True)

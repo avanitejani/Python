@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet">
+    <title>Book Entry</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFFAFA;
+            {% comment %} LavenderBlush {% endcomment %}
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 80px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        form {
+            display: grid;
+            gap: 10px;
+        }
+        
+        label {
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        button {
+            background-color: #FFF0F5;
+            color: maroon;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: maroon;
+            color: #FFF0F5;
+            
+
+        }
+    </style>
+        
+
+</head>
+<body>
+    <div class="container">
+        <h1 style="color:maroon;">Create a New Book Entry</h1>
+        <form action="{% url 'index' %}" method="POST">
+            {% csrf_token %}
+            <div style="color: maroon;">{{msg}}</div>
+
+
+            <label for="titel">Title</label>
+            <input type="text" id="titel" name="titel" placeholder="Entered Book Title" >
+            
+            <label for="author">Author</label>
+            <input type="text" id="author" name="author" placeholder="Author Full Name.." required> 
+            
+            <label for="isbn">Isbn</label>
+            <input type="text" id="isbn" name="isbn" placeholder="Isbn Number.." > 
+            
+            <label for="publisher">Publisher</label>
+            <input type="text" id="publisher" name="publisher" placeholder="Publisher Full Name.." required> 
+
+        
+            
+            <button type="submit">Publish</button>
+        </form>
+    </div>
+</body>
+</html>
